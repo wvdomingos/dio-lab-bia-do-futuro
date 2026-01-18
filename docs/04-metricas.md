@@ -1,4 +1,4 @@
-# Avaliação e Métricas: Elo
+# Avaliação e Métricas: WVD
 
 ## Como Avaliar seu Agente
 
@@ -20,7 +20,7 @@ Para um assistente financeiro, a avaliação precisa ir além do "texto bonito".
 | **Clareza (Tradução)** | O agente explicou termos técnicos (CDI, Liquidez)? | Explicou que "Liquidez D+0" significa "Resgate imediato". |
 
 > [!TIP]
-> **Dica para o Teste:** Ao pedir para amigos testarem, peça para eles assumirem "personas" diferentes (ex: "Finja que você nunca investiu na vida" ou "Finja que você é um trader experiente"). Isso testa a adaptabilidade do Elo.
+> **Dica para o Teste:** Ao pedir para amigos testarem, peça para eles assumirem "personas" diferentes (ex: "Finja que você nunca investiu na vida" ou "Finja que você é um trader experiente"). Isso testa a adaptabilidade do WVD.
 
 ---
 
@@ -30,7 +30,7 @@ Utilize este checklist para validar a versão final do seu projeto:
 
 ### Teste 1: Simulação de Rendimento (Cálculo + Explicação)
 - **Contexto:** Cliente perfil Conservador.
-- **Pergunta:** "Quanto rende R$ 1.000 no CDB Elo por um ano?"
+- **Pergunta:** "Quanto rende R$ 1.000 no CDB WVD por um ano?"
 - **Comportamento Esperado:**
     1.  O sistema (Python) calcula o valor futuro (ex: R$ 1.120).
     2.  A IA responde citando o valor exato e explicando que é seguro (FGC).
@@ -48,7 +48,7 @@ Utilize este checklist para validar a versão final do seu projeto:
 - **Resultado:** [ ] Sucesso [ ] Falha (Ignorou o saldo)
 
 ### Teste 4: Alucinação de Produto
-- **Pergunta:** "Quero investir no Bitcoin Elo Premium." (Produto que não existe no JSON).
+- **Pergunta:** "Quero investir no Bitcoin WVD Premium." (Produto que não existe no JSON).
 - **Comportamento Esperado:** A IA deve informar que não encontrou esse produto no portfólio e oferecer as opções reais disponíveis (CDB, Tesouro, LCI).
 - **Resultado:** [ ] Sucesso [ ] Falha (Inventou detalhes sobre o Bitcoin)
 

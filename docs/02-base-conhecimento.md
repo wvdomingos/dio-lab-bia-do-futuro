@@ -1,8 +1,8 @@
-# Base de Conhecimento: Elo
+# Base de Conhecimento: WVD
 
 ## Dados Utilizados
 
-Para garantir que o assistente "Elo" forneça respostas precisas e simulações matemáticas corretas, optei por criar datasets sintéticos (mockados) em formato JSON. O formato JSON foi escolhido pela facilidade de manipulação em Python (dicionários) e leitura clara pela LLM.
+Para garantir que o assistente "WVD" forneça respostas precisas e simulações matemáticas corretas, optei por criar datasets sintéticos (mockados) em formato JSON. O formato JSON foi escolhido pela facilidade de manipulação em Python (dicionários) e leitura clara pela LLM.
 
 Os arquivos estão localizados na pasta `data`:
 
@@ -44,7 +44,7 @@ Perfil de Investidor: Conservador
 Saldo Atual: R$ 15.000,00
 
 [PRODUTOS DISPONÍVEIS - FILTRO: RISCO BAIXO]
-1. Produto: CDB Elo Plus
+1. Produto: CDB WVD Plus
    - Tipo: Renda Fixa
    - Rentabilidade: 110% do CDI
    - Liquidez: Apenas no vencimento (365 dias)

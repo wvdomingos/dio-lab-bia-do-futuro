@@ -17,5 +17,5 @@ ARQUIVO_CLIENTE = DATA_DIR / "perfil_investidor.json"
 ARQUIVO_PRODUTOS = DATA_DIR / "produtos_financeiros.json"
 
 # Configurações do Modelo
-MODEL_NAME = "gemini-1.5-flash" # Modelo rápido e eficiente
+MODEL_NAME = "gemini-3-flash-preview" # Modelo rápido e eficiente
 TEMPERATURE = 0.7

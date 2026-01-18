@@ -1,13 +1,13 @@
 import streamlit as st
-from agente import EloAgent
+from agente import WVDAgent
 
 # Configuração da Página
-st.set_page_config(page_title="Elo - Assistente Financeiro", page_icon="🏦")
+st.set_page_config(page_title="WVD - Assistente Financeiro", page_icon="🏦")
 
 # Inicialização (Cache do Agente para não recarregar a cada interação)
 @st.cache_resource
 def get_agent():
-    return EloAgent()
+    return WVDAgent()
 
 agent = get_agent()
 
@@ -28,8 +28,8 @@ with st.sidebar:
 # Inicializa histórico de chat
 if "messages" not in st.session_state:
     st.session_state.messages = []
-    # Mensagem inicial do Elo
-    boas_vindas = "Olá! Sou o Elo, seu assistente financeiro. Como posso ajudar com seus investimentos hoje?"
+    # Mensagem inicial do WVD
+    boas_vindas = "Olá! Sou o WVD, seu assistente financeiro. Como posso ajudar com seus investimentos hoje?"
     st.session_state.messages.append({"role": "assistant", "content": boas_vindas})
 
 # Exibe mensagens anteriores

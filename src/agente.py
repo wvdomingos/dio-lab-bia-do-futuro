@@ -1,21 +1,18 @@
 import json
 import re
-import google.generativeai as genai
+from google import genai
 import pandas as pd
 from config import API_KEY, ARQUIVO_CLIENTE, ARQUIVO_PRODUTOS, MODEL_NAME
 
-# Configuração da API
-genai.configure(api_key=API_KEY)
-
-class EloAgent:
+class WVDAgent:
     def __init__(self):
         self.dados_cliente = self._carregar_json(ARQUIVO_CLIENTE)
         self.produtos = self._carregar_json(ARQUIVO_PRODUTOS)
-        self.model = genai.GenerativeModel(MODEL_NAME)
+        self.client = genai.Client(api_key=API_KEY)
         
         # System Prompt definido na etapa 3
         self.system_instruction = """
-        Você é o Elo, assistente financeiro.
+        Você é o WVD, assistente financeiro.
         1. Use os dados abaixo para responder.
         2. Se houver um bloco [CÁLCULO REALIZADO], use-o para explicar o rendimento.
         3. Nunca invente taxas.
@@ -31,7 +28,7 @@ class EloAgent:
 
     def _calcular_simulacao(self, valor, dias=365):
         """
-        Engine de Cálculo: Simula investimento no CDB Elo Plus (Padrão)
+        Engine de Cálculo: Simula investimento no CDB WVD Plus (Padrão)
         """
         # Pega o primeiro produto para simulação (CDB)
         produto = self.produtos[0] 
@@ -102,9 +99,15 @@ class EloAgent:
         {historico_chat[-3:] if historico_chat else "Início da conversa."}
         
         USUÁRIO: {mensagem_usuario}
-        ELO:
+        WVD:
         """
         
-        # 3. Chama a LLM
-        response = self.model.generate_content(prompt_final)
-        return response.text
+        # 3. Chama a LLM    
+        try:
+            response = self.client.models.generate_content(
+                model=MODEL_NAME,
+                contents=prompt_final
+            )
+            return response.text
+        except Exception as e:
+            return f"Desculpe, tive um erro técnico ao consultar a IA: {str(e)}"
